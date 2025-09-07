@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#vader-gif {
+  /* ✨ SOLUCIÓN FINAL: La imagen se verá el doble de grande sin importar la pantalla ✨ */
+  width: 30vw;
+  height: 80vh;
+  object-fit: cover; /* Esto asegura que la imagen cubra todo el espacio sin perder la proporción, aunque puede que los bordes queden fuera de la pantalla. */
+  transition: opacity 5s ease-out;
+}
+
+.speech-bubble {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 20px 30px;
+  margin-top: 20px;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.speech-bubble::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 20px;
+  border-style: solid;
+  border-color: transparent transparent rgba(255, 255, 255, 0.9) transparent;
+}
+
+#typed-text {
+  color: #333;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+  white-space: pre-wrap;
+  min-height: 1.5em;
+}
+
+/* Clase para el efecto de desvanecimiento */
+.fade-out {
+  opacity: 0;
+}
